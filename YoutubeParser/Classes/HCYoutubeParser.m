@@ -168,6 +168,11 @@
                             
                             for (NSString *key in keys)
                             {
+                                // Added by Angelo.
+                                if (!parts[key][0]) {
+                                    NSLog(@"missing part for %@", key);
+                                    continue;
+                                }
                                 [optionsDict setObject:parts[key][0] forKey:key]; // [0] because we want the object and not the array
                             }
                             
